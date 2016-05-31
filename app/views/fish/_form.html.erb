@@ -1,0 +1,53 @@
+<%= form_for(@fish) do |f| %>
+  <% if @fish.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fish.errors.count, "error") %> prohibited this fish from being saved:</h2>
+
+      <ul>
+      <% @fish.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= form_for(@fish) do |f| %>
+  <%= f.error_notification %>
+  
+  <div class="form-inputs">
+   <%= f.label :name %>:
+   <%= f.text_field :name %><br>
+  </div>
+
+  <div class="form-inputs">
+   <%= f.label :mission %>:
+   <%= f.text_field :mission %><br>
+  </div>
+
+  <div class="form-inputs">
+   <%= f.label :start_time %>:
+   <%= f.time_select :start_time %><br>
+  </div>
+
+  <div class="form-inputs">
+   <%= f.label :end_time %>:
+   <%= f.time_select :end_time %><br>
+  </div>
+
+   <div class="form-inputs">
+   <%= f.label :date %>:
+   <%= f.date_select :date %><br>
+  </div>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <div class="form-actions"> 
+  <%= f.submit type: 'submit'%><br>
+  </div>
+  
+  <% end %>

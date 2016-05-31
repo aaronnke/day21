@@ -1,0 +1,93 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  background-color: #AED5B5;
+}
+
+#table{
+  background-color: white;
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.tank{
+  border-width: 1.5vh;
+  border-radius: 5%;
+  height: 80vh;
+  width: 70vw;
+  position: absolute;
+  bottom: 11vh;
+  right: 15vw;
+  border-color: white;
+  border-style: solid;
+  background-color: #7cbb87;
+}
+
+.tank2{
+  border-width: 1.5vh;
+  border-radius: 5%;
+  height: 80vh;
+  width: 70vw;
+  position: absolute;
+  bottom: 11vh;
+  right: 15vw;
+  border-color: white;
+  border-style: solid;
+}
+
+#cover{
+  background-color: #AED5B5;
+  width: 100vw;
+  height: 15vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+
+#cover2{
+  background-color: #AED5B5;
+  width: 100vw;
+  height: 12vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#container {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    border: 1px solid blue;
+}
+
+.the-div {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.left {
+  background-image: url("fish-left.png");
+}
+
+.right {
+  background-image: url("fish-right.png");
+}
