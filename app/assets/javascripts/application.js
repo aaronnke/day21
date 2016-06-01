@@ -15,6 +15,51 @@
 //= require turbolinks
 //= require_tree .
 
+var foodCounter = 0
+
+var Fish = function(){
+  this.positionTop = 0
+  this.positionLeft = 0
+  this.htmlElement = $("<div class='the-div'></div>")
+  var ownSelf = this
+  $( ".tank2" ).append( this.htmlElement );
+
+  function animateMovement(){
+    var theContainer = $(".tank"),
+      maxLeft = theContainer.width() - 100,
+      maxTop = theContainer.height() - 100,
+      leftPos = Math.floor(Math.random() * maxLeft),
+      topPos = Math.floor(Math.random() * maxTop);
+      
+      if (ownSelf.htmlElement.position().left < leftPos) {
+          ownSelf.htmlElement.removeClass("left").addClass("right");
+      } else {
+          ownSelf.htmlElement.removeClass("right").addClass("left");
+      }
+
+      if ($('.food').length){
+        var foodLength = $('.food').length,
+         foodObject = $('.food').eq(Math.floor(Math.random() * foodLength))
+         ownSelf.htmlElement.animate({
+          "left": foodObject.offset().left - $(window).width()*0.15,
+          "top": foodObject.offset().top - $(window).height()*0.15 + 200,
+          }, 1000, 
+          ownSelf.animateMovement
+        );
+      } 
+      else{
+        ownSelf.htmlElement.animate({
+          "left": leftPos,
+          "top": topPos
+          }, Math.random()*1000+3500,
+          ownSelf.animateMovement
+        );
+      }
+  }
+
+  this.animateMovement = animateMovement
+}
+
 function AnimateIt() {
     var theContainer = $(".tank"),
       maxLeft = theContainer.width() - 100,
@@ -30,18 +75,63 @@ function AnimateIt() {
       } else {
           theDiv.removeClass("right").addClass("left");
       }
-          
-      theDiv.animate({
+      console.log($('.food').length)
+      if ($('.food').length){
+         theDiv.animate({
+          "left": $(".food").offset().left,
+          "top": $(".food").offset().top,
+          }, Math.random()*500+4500
+        );
+      } else {
+         theDiv.animate({
           "left": leftPos,
           "top": topPos
-      }, 5000);
-    });
+          }, Math.random()*500+4500
+        );
+      }
 
-    setTimeout(AnimateIt, 5000)
+    });
+    setTimeout(AnimateIt, 2000)
 }
 
 
 $(document).ready(function(){
-    AnimateIt();
+    // AnimateIt();
 });
 
+$(document).ready(function(){
+  $( ".add" ).click(function() {
+  //   $( ".tank2" ).append( "<div class='the-div'></div>" );
+    var fish1 = new Fish();
+    fish1.animateMovement();
+  });
+
+});
+
+$(function(){
+    $(document).click(function(e){
+        var xc = e.pageX ;
+        var yc = e.pageY ;
+        var x = e.pageX + 'px';
+        var y = e.pageY + 'px';
+        var food = $("<div class='food'><div/>");
+        var div = $('<div>').css({
+            "position": "absolute",                    
+            "left": x,
+            "top": y
+        });
+        if (yc < 155 && xc < $(window).width()*0.85 && xc > $(window).width()*0.15){
+          div.append(food);
+          // $.each($(".the-div"), function(index, value){
+          //   $(value).stop()
+          // });
+
+          $(document.body).append(div);
+          div.animate({
+            top: '155px'
+          }).animate({
+            top: '900px'
+          }, 4000).delay(100).fadeOut(500, function() { $(this).remove(); });          
+        }   
+    });
+});
