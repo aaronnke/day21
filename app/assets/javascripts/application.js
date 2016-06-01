@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.overlaps
 //= require turbolinks
 //= require_tree .
 
-var foodCounter = 0
+var audio = new Audio('/assets/munch.mp3');
 
 var Fish = function(){
   this.positionTop = 0
@@ -42,8 +43,8 @@ var Fish = function(){
          foodObject = $('.food').eq(Math.floor(Math.random() * foodLength))
          ownSelf.htmlElement.animate({
           "left": foodObject.offset().left - $(window).width()*0.15,
-          "top": foodObject.offset().top - $(window).height()*0.15 + 200,
-          }, 1000, 
+          "top": foodObject.offset().top - $(window).height()*0.15,
+          }, 500, 
           ownSelf.animateMovement
         );
       } 
@@ -60,52 +61,11 @@ var Fish = function(){
   this.animateMovement = animateMovement
 }
 
-function AnimateIt() {
-    var theContainer = $(".tank"),
-      maxLeft = theContainer.width() - 100,
-      maxTop = theContainer.height() - 100
-
-    $.each($(".the-div"), function(index, value){
-      var theDiv = $(value),
-        leftPos = Math.floor(Math.random() * maxLeft),
-        topPos = Math.floor(Math.random() * maxTop);
-      
-      if (theDiv.position().left < leftPos) {
-          theDiv.removeClass("left").addClass("right");
-      } else {
-          theDiv.removeClass("right").addClass("left");
-      }
-      console.log($('.food').length)
-      if ($('.food').length){
-         theDiv.animate({
-          "left": $(".food").offset().left,
-          "top": $(".food").offset().top,
-          }, Math.random()*500+4500
-        );
-      } else {
-         theDiv.animate({
-          "left": leftPos,
-          "top": topPos
-          }, Math.random()*500+4500
-        );
-      }
-
-    });
-    setTimeout(AnimateIt, 2000)
-}
-
-
-$(document).ready(function(){
-    // AnimateIt();
-});
-
 $(document).ready(function(){
   $( ".add" ).click(function() {
-  //   $( ".tank2" ).append( "<div class='the-div'></div>" );
     var fish1 = new Fish();
     fish1.animateMovement();
   });
-
 });
 
 $(function(){
@@ -122,16 +82,34 @@ $(function(){
         });
         if (yc < 155 && xc < $(window).width()*0.85 && xc > $(window).width()*0.15){
           div.append(food);
-          // $.each($(".the-div"), function(index, value){
-          //   $(value).stop()
-          // });
-
           $(document.body).append(div);
           div.animate({
             top: '155px'
           }).animate({
             top: '900px'
-          }, 4000).delay(100).fadeOut(500, function() { $(this).remove(); });          
+          }, 6000).delay(100).fadeOut(500, function() { $(this).remove(); });          
         }   
     });
 });
+
+
+window.setInterval(function(){
+  $.each($('.food'), function(index, value){
+    $.each($('.the-div'), function(index2, fish){
+      if (doTheyOverlap($(value),$(fish))){   
+        audio.play();
+        $(value).remove();
+        var newWidth = $(fish).width() + 20 + 'px'
+        var newHeight = $(fish).height() + 20 + 'px'
+        $(fish).css({width: newWidth, height: newHeight});
+      }
+    })
+  })  
+}, 1);
+
+
+  // $.each($('.food'), function(index, value){
+  //   if (doTheyOverlap($(value),$('.the-div'))){   
+  //     $(value).remove();
+  //   }
+  // })  
