@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20160531060755) do
     t.integer  "user_id"
     t.string   "name"
     t.string   "goal"
-    t.string   "state" 
+    t.string   "state"
+    t.integer  "fed"
     t.integer  "growth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

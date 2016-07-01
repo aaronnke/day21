@@ -81,7 +81,7 @@ $(document).ready(function(){
     var fish = new Fish();
     fish.animateMovement();
   });
-});
+});-
 
 $(function(){
     $(document).click(function(e){
@@ -109,11 +109,11 @@ $(function(){
 
 
 window.setInterval(function(){
-  $.each($('.food'), function(index, value){
+  $.each($('.food'), function(index, food){
     $.each($('.fish'), function(index2, fish){
-      if (doTheyOverlap($(value),$(fish))){
+      if (doTheyOverlap($(food),$(fish))){
         munch.play();   
-        $(value).remove();
+        $(food).remove();
         var newWidth = $(fish).width() + 5 + 'px'
         var newHeight = $(fish).height() + 5 + 'px'
         $(fish).css({width: newWidth, height: newHeight});
