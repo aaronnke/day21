@@ -1,0 +1,269 @@
+/* line 1, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 24, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 28, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 40, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 44, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 50, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 58, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 69, /Users/Zachary/Desktop/day21/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+/* line 18, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+body {
+  background-color: #dde0e0;
+  overflow: hidden;
+}
+
+/* line 23, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+#table {
+  background-color: white;
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+/* line 32, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.tank {
+  border-width: 1.5vh;
+  border-radius: 2%;
+  height: 73vh;
+  width: 71vw;
+  position: absolute;
+  bottom: 12.5vh;
+  right: 15.5vw;
+  background-color: #33adff;
+}
+
+/* line 43, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.tank2 {
+  border-width: 1.5vh;
+  border-radius: 5%;
+  height: 80vh;
+  width: 70vw;
+  position: absolute;
+  bottom: 11vh;
+  right: 15vw;
+  border-color: white;
+  border-style: solid;
+}
+
+/* line 55, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+#cover {
+  background-color: #dde0e0;
+  width: 100vw;
+  height: 15vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 65, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+#cover2 {
+  background-color: #dde0e0;
+  width: 100vw;
+  height: 12vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 74, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+#container {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  border: 1px solid blue;
+}
+
+/* line 81, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.fish {
+  background: url(/assets/clown-2495e024bb0ee56dcf5216fe60f4819b59cbe736811ba982dbf10a104d5a4cea.svg);
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+/* line 89, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.dory {
+  background: url(/assets/dory-70e3d1abc12be448615a14f68b27f44712d2b684151089a1c1d1dcef8be303ad.svg);
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+/* line 97, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.puffer {
+  background: url(/assets/puffer-6591009c80e16301b319583ea95fa8ac50085dc355859cd096f1c0dbb0856ed4.svg);
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+/* line 105, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.shark {
+  background: url(/assets/shark-aac031c71be7c984622e3b1ced303096ee01ca8c7763e18d0cdb6ba2a5e531d7.svg);
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+/* line 113, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.left {
+  -webkit-transform: scale(-1, 1);
+}
+
+/* line 120, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.add {
+  background: url(/assets/add-fish-e0c4c15e62b6c25fde15a21715714e53a534499ae59aa32c64af893fce7c3e55.png);
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -35px;
+}
+
+/* line 131, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.feed {
+  background: url(/assets/fish-burger-21d3fda0f6548b2a1e688ef01d1cfb5deb088042286aa8ca74659b81a1c0daa6.png);
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  margin-top: -35px;
+}
+
+/* line 142, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.food {
+  background-color: #733f18;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* line 150, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.feed:hover {
+  opacity: 0.5;
+}
+
+/* line 154, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.add:hover {
+  opacity: 0.5;
+}
+
+/* line 158, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.ship {
+  background: url(/assets/coral-77688644213f0468bc9ccc071b5ae4f517d872ac65710af0e658e6baee58f9f4.svg);
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  position: absolute;
+  bottom: 0%;
+  right: 55%;
+  margin-right: -25%;
+}
+
+/* line 169, /Users/Zachary/Desktop/fishtank/day21/app/assets/stylesheets/application.css.scss */
+.cup {
+  background: url(/assets/cup-76fd80487a34b192834250f43ca309c4b29435d5e73b06b0a661d7371642d7ed.svg);
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  position: absolute;
+  bottom: 9.2%;
+  right: -10%;
+}
